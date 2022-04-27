@@ -43,5 +43,9 @@
       "path": "src/main.html",
       "addressable": true
     },
+    {
+      "path": "src/popupDialog.html",
+      "addressable": true
+    },
   ]
 }
