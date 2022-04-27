@@ -62,5 +62,21 @@
         "uri": "src/popupDialog.html"
       }
     },
+    {
+      "id": "team-member-randomizer-button",
+      "type": "ms.vss-web.action",
+      "description": "Team member randomizer",
+      "targets": [
+        "ms.vss-work-web.sprint-board-pivot-filter-menu"
+      ],
+      "properties": {
+        "text": "",
+        "title": "Team Member Randomizer",
+        "icon": "src/icon.png",
+        "group": "actions",
+        "uri": "src/main.html",
+        "registeredObjectId": "teamMemberRandomizerButton"
+      }
+    }
   ]
 }
