@@ -43,6 +43,9 @@
       const projectId = webContext.project.id;
       const teamId = webContext.team.id;
 
+      _client.getTeamMembersWithExtendedProperties(projectId, teamId, 100, 0).then((members) => {
+      });
+
       VSS.notifyLoadSucceeded();
     });
   </script>
