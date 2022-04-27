@@ -7,4 +7,7 @@
     "url": "https://github.com/polatengin/tokyo"
   },
   "author": "Engin Polat",
+  "dependencies": {
+    "vss-web-extension-sdk": "5.141.0"
+  }
 }
