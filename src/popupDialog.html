@@ -156,6 +156,11 @@
           initConfetti();
           render();
         }
+
+        members.forEach((member) => {
+          team.appendChild(createRowForTeamMember(member));
+        });
+
       });
 
       VSS.notifyLoadSucceeded();
