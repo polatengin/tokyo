@@ -14,4 +14,7 @@
       "uri": "https://github.com/polatengin/tokyo"
     }
   },
+  "icons": {
+    "default": "src/icon.png"
+  },
 }
