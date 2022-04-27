@@ -53,5 +53,14 @@
     }
   ],
   "contributions": [
+    {
+      "id": "popupDialog",
+      "type": "ms.vss-web.control",
+      "description": "The content displayed in the dialog shown in the contributed menu actions from this extension.",
+      "targets": [],
+      "properties": {
+        "uri": "src/popupDialog.html"
+      }
+    },
   ]
 }
