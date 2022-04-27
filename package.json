@@ -1,4 +1,5 @@
 {
   "name": "tokyo",
   "version": "0.1.0",
+  "description": "Random Team Member Selector for Daily Standups",
 }
