@@ -43,6 +43,8 @@
       const projectId = webContext.project.id;
       const teamId = webContext.team.id;
 
+      let counter = 0;
+
       _client.getTeamMembersWithExtendedProperties(projectId, teamId, 100, 0).then((members) => {
         const createRowForTeamMember = (member) => {
           const row = document.createElement("tr");
