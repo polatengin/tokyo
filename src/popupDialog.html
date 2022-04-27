@@ -161,6 +161,11 @@
           team.appendChild(createRowForTeamMember(member));
         });
 
+        completedTeamMembers.forEach((member) => {
+          const row = document.getElementById(`member-${member}`);
+          row.classList.add("completed");
+        });
+
       });
 
       VSS.notifyLoadSucceeded();
