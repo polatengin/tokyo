@@ -22,4 +22,7 @@
       "id": "Microsoft.VisualStudio.Services"
     }
   ],
+  "demands": [
+    "api-version/2.0"
+  ],
 }
