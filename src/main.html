@@ -26,6 +26,8 @@
               okCallback: (result) => {
               },
               cancelCallback: (result) => {
+                const key = (new Intl.DateTimeFormat().format(new Date())).replace(/\//g, "");
+                localStorage.removeItem(key);
               },
               getDialogResult: () => {
                 return null;
