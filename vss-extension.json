@@ -25,4 +25,9 @@
   "demands": [
     "api-version/2.0"
   ],
+  "content": {
+    "details": {
+      "path": "DETAILS.md"
+    }
+  },
 }
