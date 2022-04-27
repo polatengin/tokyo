@@ -67,6 +67,12 @@
 
         const key = (new Intl.DateTimeFormat().format(new Date())).replace(/\//g, "");
         const completedTeamMembers = JSON.parse(localStorage.getItem(key)) || [];
+
+        const notCompletedTeamMembers = members.filter((member) => {
+          return !completedTeamMembers.some((teamMember) => {
+            return teamMember === member.identity.id;
+          });
+        });
       });
 
       VSS.notifyLoadSucceeded();
