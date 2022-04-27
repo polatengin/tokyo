@@ -35,5 +35,9 @@
     "theme": "dark"
   },
   "files": [
+    {
+      "path": "src/icon.png",
+      "addressable": true
+    },
   ]
 }
