@@ -5,4 +5,5 @@
   "name": "Team Member Randomizer",
   "description": "Team Member Randomizer for Daily Standups",
   "publisher": "enginpolat",
+  "public": false,
 }
