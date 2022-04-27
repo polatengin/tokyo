@@ -64,6 +64,9 @@
 
           return row;
         }
+
+        const key = (new Intl.DateTimeFormat().format(new Date())).replace(/\//g, "");
+        const completedTeamMembers = JSON.parse(localStorage.getItem(key)) || [];
       });
 
       VSS.notifyLoadSucceeded();
