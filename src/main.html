@@ -16,6 +16,21 @@
         execute: (properties) => {
           VSS.getService("ms.vss-web.dialog-service").then((dialogService) => {
             const extensionInfo = VSS.getExtensionContext();
+
+            const options = {
+              title: "Team Members",
+              width: 300,
+              height: 600,
+              okText: "OK",
+              cancelText: "Reset",
+              okCallback: (result) => {
+              },
+              cancelCallback: (result) => {
+              },
+              getDialogResult: () => {
+              }
+            };
+
           });
         }
       };
