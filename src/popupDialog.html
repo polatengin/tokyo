@@ -166,6 +166,29 @@
           row.classList.add("completed");
         });
 
+        let randomizer = 0;
+        const randomNumber = () => {
+          const randomIndex = Math.floor(Math.random() * notCompletedTeamMembers.length);
+          const randomMember = notCompletedTeamMembers[randomIndex];
+
+          team.querySelectorAll("tr").forEach((row) => {
+            row.click();
+            row.classList.remove("bold");
+          });
+
+          const memberElement = document.getElementById(`member-${randomMember.identity.id}`);
+          memberElement.classList.add("bold");
+
+          if (randomizer++ > 20) {
+            clearInterval(timer);
+
+            memberElement.style.color = "green";
+
+            completedTeamMembers.push(randomMember.identity.id);
+
+            localStorage.setItem(key, JSON.stringify(completedTeamMembers));
+          }
+        }
       });
 
       VSS.notifyLoadSucceeded();
