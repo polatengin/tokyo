@@ -9,4 +9,9 @@
   "categories": [
     "Azure Boards"
   ],
+  "links": {
+    "learn": {
+      "uri": "https://github.com/polatengin/tokyo"
+    }
+  },
 }
