@@ -65,6 +65,8 @@
           return row;
         }
 
+        const randomRange = (min, max) => Math.random() * (max - min) + min;
+
         const key = (new Intl.DateTimeFormat().format(new Date())).replace(/\//g, "");
         const completedTeamMembers = JSON.parse(localStorage.getItem(key)) || [];
 
