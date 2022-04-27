@@ -31,6 +31,8 @@
               }
             };
 
+            dialogService.openDialog(extensionInfo.publisherId + "." + extensionInfo.extensionId + ".popupDialog", options, { properties }).then((dialog) => {
+            });
           });
         }
       };
