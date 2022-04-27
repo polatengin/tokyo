@@ -14,6 +14,8 @@
     VSS.register("teamMemberRandomizerButton", () => {
       return {
         execute: (properties) => {
+          VSS.getService("ms.vss-web.dialog-service").then((dialogService) => {
+          });
         }
       };
     });
