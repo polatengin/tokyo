@@ -30,4 +30,8 @@
       "path": "DETAILS.md"
     }
   },
+  "branding": {
+    "color": "rgb(190, 39, 3)",
+    "theme": "dark"
+  },
 }
