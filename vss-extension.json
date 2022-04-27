@@ -47,5 +47,9 @@
       "path": "src/popupDialog.html",
       "addressable": true
     },
+    {
+      "path": "node_modules/vss-web-extension-sdk/lib",
+      "addressable": true
+    }
   ]
 }
