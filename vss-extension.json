@@ -51,5 +51,7 @@
       "path": "node_modules/vss-web-extension-sdk/lib",
       "addressable": true
     }
+  ],
+  "contributions": [
   ]
 }
