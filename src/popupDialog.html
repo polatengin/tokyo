@@ -44,6 +44,24 @@
       const teamId = webContext.team.id;
 
       _client.getTeamMembersWithExtendedProperties(projectId, teamId, 100, 0).then((members) => {
+        const createRowForTeamMember = (member) => {
+          const row = document.createElement("tr");
+          row.id = `member-${member.identity.id}`;
+
+          const id = document.createElement("td");
+          const photo = document.createElement("td");
+          const name = document.createElement("td");
+
+          id.innerText = ++counter;
+          photo.innerHTML = "<img src='" + member.identity.imageUrl + "' />";
+          name.innerHTML = "<span>" + member.identity.displayName + "</span>";
+
+          row.appendChild(id);
+          row.appendChild(photo);
+          row.appendChild(name);
+
+          return row;
+        }
       });
 
       VSS.notifyLoadSucceeded();
