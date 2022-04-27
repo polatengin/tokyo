@@ -15,6 +15,7 @@
       return {
         execute: (properties) => {
           VSS.getService("ms.vss-web.dialog-service").then((dialogService) => {
+            const extensionInfo = VSS.getExtensionContext();
           });
         }
       };
