@@ -17,4 +17,9 @@
   "icons": {
     "default": "src/icon.png"
   },
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
 }
