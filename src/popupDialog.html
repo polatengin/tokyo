@@ -176,51 +176,53 @@
           row.classList.add("completed");
         });
 
-        let randomizer = 0;
-        const randomNumber = () => {
-          const randomIndex = Math.floor(Math.random() * notCompletedTeamMembers.length);
-          const randomMember = notCompletedTeamMembers[randomIndex];
-
-          team.querySelectorAll("tr").forEach((row) => {
-            row.click();
-            row.classList.remove("bold");
-          });
-
-          const memberElement = document.getElementById(`member-${randomMember.identity.id}`);
-          memberElement.classList.add("bold");
-
-          if (randomizer++ > 20) {
-            clearInterval(timer);
-
-            memberElement.style.color = "green";
-
-            completedTeamMembers.push(randomMember.identity.id);
-
-            localStorage.setItem(key, JSON.stringify(completedTeamMembers));
-          }
-        }
-
-        let timer = 0;
-
-        if (notCompletedTeamMembers.length > 0) {
-          if (notCompletedTeamMembers.length === 1) {
-            const randomMember = notCompletedTeamMembers[0];
+        const startRandomizer = () => {
+          let randomizer = 0;
+          const randomNumber = () => {
+            const randomIndex = Math.floor(Math.random() * notCompletedTeamMembers.length);
+            const randomMember = notCompletedTeamMembers[randomIndex];
 
             team.querySelectorAll("tr").forEach((row) => {
+              row.click();
               row.classList.remove("bold");
             });
 
             const memberElement = document.getElementById(`member-${randomMember.identity.id}`);
             memberElement.classList.add("bold");
-            memberElement.style.color = "green";
 
-            completedTeamMembers.push(randomMember.identity.id);
+            if (randomizer++ > 20) {
+              clearInterval(timer);
 
-            localStorage.setItem(key, JSON.stringify(completedTeamMembers));
-          } else {
-            timer = setInterval(randomNumber, 200);
+              memberElement.style.color = "green";
+
+              completedTeamMembers.push(randomMember.identity.id);
+
+              localStorage.setItem(key, JSON.stringify(completedTeamMembers));
+            }
           }
-        }
+
+          let timer = 0;
+
+          if (notCompletedTeamMembers.length > 0) {
+            if (notCompletedTeamMembers.length === 1) {
+              const randomMember = notCompletedTeamMembers[0];
+
+              team.querySelectorAll("tr").forEach((row) => {
+                row.classList.remove("bold");
+              });
+
+              const memberElement = document.getElementById(`member-${randomMember.identity.id}`);
+              memberElement.classList.add("bold");
+              memberElement.style.color = "green";
+
+              completedTeamMembers.push(randomMember.identity.id);
+
+              localStorage.setItem(key, JSON.stringify(completedTeamMembers));
+            } else {
+              timer = setInterval(randomNumber, 200);
+            }
+          }
+        };
       });
 
       VSS.notifyLoadSucceeded();
