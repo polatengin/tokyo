@@ -78,9 +78,9 @@
         const randomRange = (min, max) => Math.random() * (max - min) + min;
 
         const key = (new Intl.DateTimeFormat().format(new Date())).replace(/\//g, "");
-        const completedTeamMembers = JSON.parse(localStorage.getItem(key)) || [];
+        let completedTeamMembers = JSON.parse(localStorage.getItem(key)) || [];
 
-        const notCompletedTeamMembers = members.filter((member) => {
+        let notCompletedTeamMembers = members.filter((member) => {
           return !completedTeamMembers.some((teamMember) => {
             return teamMember === member.identity.id;
           });
