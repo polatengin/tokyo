@@ -196,6 +196,7 @@
               memberElement.style.color = "green";
 
               completedTeamMembers.push(randomMember.identity.id);
+              notCompletedTeamMembers.splice(randomIndex, 1);
 
               localStorage.setItem(key, JSON.stringify(completedTeamMembers));
             }
