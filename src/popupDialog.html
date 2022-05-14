@@ -63,7 +63,9 @@
           const name = document.createElement("td");
 
           id.innerText = ++counter;
-          photo.innerHTML = "<img src='" + member.identity.imageUrl + "' />";
+          id.style.width = "10%";
+          photo.innerHTML = "<img src='" + member.identity.imageUrl + "' width='44' height='44' />";
+          photo.style.width = "50px";
           name.innerHTML = "<span>" + member.identity.displayName + "</span>";
 
           row.appendChild(id);
