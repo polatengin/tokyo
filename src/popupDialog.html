@@ -224,6 +224,19 @@
             }
           }
         };
+
+        buttonStartOver.addEventListener("click", () => {
+          const key = (new Intl.DateTimeFormat().format(new Date())).replace(/\//g, "");
+          localStorage.removeItem(key);
+
+          completedTeamMembers = [];
+          notCompletedTeamMembers = members.slice();
+
+          Array.from(team.children).forEach(tr => {
+            tr.className = "";
+            tr.style = "";
+          });
+        });
       });
 
       VSS.notifyLoadSucceeded();
