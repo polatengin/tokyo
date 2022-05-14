@@ -43,9 +43,9 @@
 
     VSS.require(["VSS/Service", "TFS/Core/RestClient"], (VSS_Service, TFS_RestClient) => {
       const _client = VSS_Service.getCollectionClient(TFS_RestClient.CoreHttpClient4_1);
-      
+
       const webContext = VSS.getWebContext();
-      
+
       const projectId = webContext.project.id;
       const teamId = webContext.team.id;
 
