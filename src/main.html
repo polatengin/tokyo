@@ -21,22 +21,10 @@
               title: "Team Members",
               width: 300,
               height: 600,
-              okText: "OK",
-              cancelText: "Reset",
-              okCallback: (result) => {
-              },
-              cancelCallback: (result) => {
-                const key = (new Intl.DateTimeFormat().format(new Date())).replace(/\//g, "");
-                localStorage.removeItem(key);
-              },
-              getDialogResult: () => {
-                return null;
-              }
+              buttons: null
             };
 
-            dialogService.openDialog(extensionInfo.publisherId + "." + extensionInfo.extensionId + ".popupDialog", options, { properties }).then((dialog) => {
-              dialog.updateOkButton(true);
-            });
+            dialogService.openDialog(extensionInfo.publisherId + "." + extensionInfo.extensionId + ".popupDialog", options, { properties });
           });
         }
       };
