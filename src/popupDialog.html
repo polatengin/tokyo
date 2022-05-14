@@ -237,6 +237,21 @@
             tr.style = "";
           });
         });
+
+        buttonNext.addEventListener("click", () => {
+          canvas.style.display = "none";
+          message.style.display = "none";
+
+          Array.from(team.children).forEach(tr => {
+            if(tr.style.color === "green") {
+              tr.className = "";
+              tr.style = "";
+              tr.classList.add("completed");
+            }
+          });
+
+          startRandomizer();
+        });
       });
 
       VSS.notifyLoadSucceeded();
