@@ -7,6 +7,9 @@
     "url": "https://github.com/polatengin/tokyo"
   },
   "author": "Engin Polat",
+  "scripts": {
+    "pack": "npx tfx-cli extension create --rev-version"
+  },
   "dependencies": {
     "vss-web-extension-sdk": "5.141.0"
   }
