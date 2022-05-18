@@ -25,6 +25,18 @@
       {id:14, text: "For what in your life do you feel most grateful?"},
       {id:15, text: "What is your most treasured memory?"},
     ];
+
+    finishedQuestions = [];
+    for (const iLoop = 0; iLoop < localStorage.length; iLoop++){
+      const current = localStorage.getItem(localStorage.key(iLoop)) || {};
+      if (current.question) {
+        finishedQuestions.push(current.question);
+      }
+    }
+    if (finishedQuestions.length === questions.length) {
+      finishedQuestions.clear();
+    }
+    questionBucket = questions.filter(e => !finishedQuestions.includes(e));
     VSS.init({ usePlatformScripts: true, usePlatformStyles: true });
 
     VSS.register("teamMemberRandomizerButton", () => {
