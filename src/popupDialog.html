@@ -39,6 +39,7 @@
     const team = document.getElementById("team");
     const canvas = document.getElementById("canvas");
     const message = document.getElementById("message");
+    const question = document.getElementById("question");
     const buttonNext = document.getElementById("buttonNext");
     const buttonStartOver = document.getElementById("buttonStartOver");
 
@@ -79,7 +80,12 @@
         const randomRange = (min, max) => Math.random() * (max - min) + min;
 
         const key = (new Intl.DateTimeFormat().format(new Date())).replace(/\//g, "");
-        let completedTeamMembers = JSON.parse(localStorage.getItem(key)) || [];
+        const storage = JSON.parse(localStorage.getItem(key));
+
+        const questionOfTheDay = storage.question;
+        let completedTeamMembers = storage.members;
+
+        question.innerText = questionOfTheDay;
 
         let notCompletedTeamMembers = members.filter((member) => {
           return !completedTeamMembers.some((teamMember) => {
