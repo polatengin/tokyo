@@ -37,6 +37,16 @@
       finishedQuestions.clear();
     }
     questionBucket = questions.filter(e => !finishedQuestions.includes(e));
+
+    const key = (new Intl.DateTimeFormat().format(new Date())).replace(/\//g, "");
+    const day = localStorage.getItem(key);
+    if (!day) {
+      localStorage.setItem(key, JSON.stringify({
+        question: questionBucket[Math.floor(Math.random() * questionBucket.length)],
+        members: [],
+      }));
+    }
+
     VSS.init({ usePlatformScripts: true, usePlatformStyles: true });
 
     VSS.register("teamMemberRandomizerButton", () => {
