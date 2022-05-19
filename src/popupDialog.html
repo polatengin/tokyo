@@ -85,7 +85,7 @@
         const questionOfTheDay = storage.question;
         let completedTeamMembers = storage.members;
 
-        question.innerText = questionOfTheDay;
+        question.innerText = questionOfTheDay.text;
 
         let notCompletedTeamMembers = members.filter((member) => {
           return !completedTeamMembers.some((teamMember) => {
