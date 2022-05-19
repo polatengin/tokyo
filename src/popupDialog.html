@@ -249,6 +249,8 @@
           canvas.style.display = "none";
           message.style.display = "none";
 
+          buttonNext.disabled = true;
+
           Array.from(team.children).forEach(tr => {
             if(tr.style.color === "green") {
               tr.className = "";
