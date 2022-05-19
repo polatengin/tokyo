@@ -225,7 +225,7 @@
 
               completedTeamMembers.push(randomMember.identity.id);
 
-              localStorage.setItem(key, JSON.stringify(completedTeamMembers));
+              localStorage.setItem(key, JSON.stringify({question: questionOfTheDay, members: completedTeamMembers}));
             } else {
               timer = setInterval(randomNumber, 200);
             }
