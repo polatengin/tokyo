@@ -206,6 +206,8 @@
               notCompletedTeamMembers.splice(randomIndex, 1);
 
               localStorage.setItem(key, JSON.stringify({question: questionOfTheDay, members: completedTeamMembers}));
+
+              buttonNext.disabled = false;
             }
           }
 
