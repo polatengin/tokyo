@@ -271,6 +271,10 @@
             }
           });
 
+          fetch("https://raw.githubusercontent.com/polatengin/tokyo/main/sibp.json").then(response => response.json()).then(sounds => {
+            soundplayer.src = sounds[Math.floor(Math.random() * sounds.length)];
+          });
+
           startRandomizer();
         });
 
