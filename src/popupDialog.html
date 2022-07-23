@@ -241,6 +241,9 @@
           }
         };
 
+        settings.addEventListener("click", () => {
+        });
+
         buttonStartOver.addEventListener("click", () => {
           const key = (new Intl.DateTimeFormat().format(new Date())).replace(/\//g, "");
           localStorage.removeItem(key);
