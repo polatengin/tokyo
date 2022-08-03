@@ -54,5 +54,65 @@
   {
     "id": 15,
     "text": "What is your most treasured memory?"
+  },
+  {
+    "id": 16,
+    "text": "What is your morning routine?"
+  },
+  {
+    "id": 17,
+    "text": "What is your end of day routine?"
+  },
+  {
+    "id": 18,
+    "text": "Share your best work from home hack."
+  },
+  {
+    "id": 19,
+    "text": "Do you have (or had) any pets?"
+  },
+  {
+    "id": 20,
+    "text": "What is your dream vacation destination?"
+  },
+  {
+    "id": 21,
+    "text": "What is your latest discovery?"
+  },
+  {
+    "id": 22,
+    "text": "What is your current obsession?"
+  },
+  {
+    "id": 23,
+    "text": "How do you deal with stress?"
+  },
+  {
+    "id": 24,
+    "text": "Do you prefer to travel by train or plane? (assuming the destination is achievable in both options)"
+  },
+  {
+    "id": 25,
+    "text": "Which celebrity would you most like to spend the day with?"
+  },
+  {
+    "id": 26,
+    "text": "What is your worst habit?"
+  },
+  {
+    "id": 27,
+    "text": "What is the most useless talent you have?"
+  },
+  {
+    "id": 28,
+    "text": "What is your worst habit?"
+  },
+  {
+    "id": 29,
+    "text": "Which fictional world would you like to live in and why?"
+  },
+  {
+    "id": 30,
+    "text": "What is the silliest thing you believed as a child?"
   }
 ]
