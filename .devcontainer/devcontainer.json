@@ -1,3 +1,4 @@
 {
-  "name": "Tokyo Dev Environment"
+  "name": "Tokyo Dev Environment",
+  "image": "mcr.microsoft.com/devcontainers/base:bullseye"
 }
