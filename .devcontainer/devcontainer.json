@@ -5,7 +5,13 @@
     "ghcr.io/devcontainers/features/common-utils:1": {},
     "ghcr.io/devcontainers/features/docker-from-docker:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {},
-    "ghcr.io/eitsupi/devcontainer-features/jq-likes:0": {}
+    "ghcr.io/eitsupi/devcontainer-features/jq-likes:0": {},
+    "ghcr.io/devcontainers/features/azure-cli:1": {},
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers-contrib/features/jest:1": {},
+    "ghcr.io/devcontainers-contrib/features/typescript:1": {},
+    "ghcr.io/eitsupi/devcontainer-features/jq-likes:1": {}
   },
   "extensions": [
     "editorconfig.editorconfig",
