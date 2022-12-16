@@ -6,5 +6,10 @@
     "ghcr.io/devcontainers/features/docker-from-docker:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/eitsupi/devcontainer-features/jq-likes:0": {}
-  }
+  },
+  "extensions": [
+    "editorconfig.editorconfig",
+    "GitHub.copilot",
+    "ms-azuretools.vscode-docker"
+  ]
 }
