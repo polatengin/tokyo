@@ -11,5 +11,6 @@
     "editorconfig.editorconfig",
     "GitHub.copilot",
     "ms-azuretools.vscode-docker"
-  ]
+  ],
+  "remoteUser": "vscode"
 }
