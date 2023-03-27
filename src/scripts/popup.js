@@ -182,9 +182,6 @@ function loadData(_client, webContext){
         }
       };
 
-      settings.addEventListener("click", () => {
-      });
-
       buttonStartOver.addEventListener("click", () => {
         const key = (new Intl.DateTimeFormat().format(new Date())).replace(/\//g, "");
         localStorage.removeItem(key);
@@ -210,10 +207,6 @@ function loadData(_client, webContext){
             tr.style = "";
             tr.classList.add("completed");
           }
-        });
-
-        fetch("https://raw.githubusercontent.com/polatengin/tokyo/main/sibp.json").then(response => response.json()).then(sounds => {
-          soundplayer.src = sounds[Math.floor(Math.random() * sounds.length)];
         });
 
         startRandomizer();

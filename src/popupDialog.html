@@ -26,16 +26,21 @@
     #message { margin:10px; }
 
     #canvas { display:none; }
+
+    .settings {
+      width:100%;
+      display: block;
+      text-align: right;
+    }
   </style>
 </head>
 <body>
-  <span id="settings">Settings</span>
+  <a href="settings.html" class="settings"> <span>&#9881;</span> settings</a>
   <canvas id="canvas"></canvas>
   <p id="message" style="display:none;"></p>
   <p id="question"></p>
   <button id="buttonRandomQuestion">Random Question</button>
-  <iframe id="soundplayer" frameborder="0" scrolling="no" width="100%" height="30"></iframe>
-  <div style="margin-bottom:10px;">
+  <div style="margin-bottom:10px;margin-top:10px">
     <button id="buttonNext">Next</button>
     <button id="buttonStartOver">Start Over</button>
   </div>
@@ -53,7 +58,6 @@
     const buttonNext = document.getElementById("buttonNext");
     const buttonStartOver = document.getElementById("buttonStartOver");
     const buttonRandomQuestion = document.getElementById("buttonRandomQuestion");
-    const soundplayer = document.getElementById("soundplayer");
 
     VSS.init({ applyTheme: true, usePlatformScripts: true, usePlatformStyles: true });
 
