@@ -2,6 +2,21 @@ function loadSettingsData(_client, webContext){
     const projectId = webContext.project.id;
     const teamId = webContext.team.id;
     const availableMembersKey="availableMembers";
+    
+    const showQuestionStatus=getShowQuestionStatus();
+    const showQuestion = document.getElementById("showQuestion");
+    showQuestion.addEventListener('change', function() {
+        storeShowQuestionStatus(this.checked);
+    });
+    showQuestion.checked=showQuestionStatus;
+
+    let speed = getSpeed();
+    const speedSlider = document.getElementById("speed");
+    speedSlider.value=speed;
+    speedSlider.addEventListener('change', function() {
+        storeSpeed(this.value);
+    });
+
     let first=false;
     let availableMembers = localStorage.getItem(availableMembersKey);
     if(!availableMembers){
@@ -61,6 +76,7 @@ function loadSettingsData(_client, webContext){
         });
 
     });
+
 
 
   }

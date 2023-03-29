@@ -19,6 +19,21 @@ function storeToday(item){
     localStorage.setItem(key, item);
 }
 
+function storeShowQuestionStatus(status){
+    localStorage.setItem("showQuestion", status);
+}
+
+function getShowQuestionStatus(){
+    return localStorage.getItem("showQuestion") == "true";
+}
+
+function storeSpeed(speed){
+    localStorage.setItem("speed", speed);
+}
+
+function getSpeed(){
+   return localStorage.getItem("speed");
+}
 function getQuestions(callback){
         fetch("https://raw.githubusercontent.com/polatengin/tokyo/main/qotd.json").then(response => response.json()).then(questions => {
             callback(questions);
@@ -56,5 +71,12 @@ function initStorage(){
                 members: [],
             }));
         }
-    })
+    });
+    
+    let speed = getSpeed();
+    if(!speed){
+      speed=200;
+      storeSpeed(speed);
+    }
+    
 }

@@ -2,6 +2,11 @@ function loadData(_client, webContext){
     const projectId = webContext.project.id;
     const teamId = webContext.team.id;
     const availableMembersKey="availableMembers";
+    const speed = getSpeed();
+    const showQuestion=getShowQuestionStatus();
+    if(!showQuestion){
+      questionsPanel.style.display = "none";
+    }
     let first=false;
     let availableMembers = localStorage.getItem(availableMembersKey);
     if(!availableMembers){
@@ -189,7 +194,7 @@ function loadData(_client, webContext){
 
             storeToday( JSON.stringify({question: questionOfTheDay, members: completedTeamMembers}));
           } else {
-            timer = setInterval(randomNumber, 200);
+            timer = setInterval(randomNumber, speed);
           }
         }
       };
@@ -205,6 +210,8 @@ function loadData(_client, webContext){
           tr.className = "";
           tr.style = "";
         });
+
+        buttonNext.disabled = false;
       });
 
       buttonNext.addEventListener("click", () => {

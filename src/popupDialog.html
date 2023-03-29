@@ -39,8 +39,10 @@
   <a href="settings.html" class="settings"> <span>&#9881;</span> settings</a>
   <canvas id="canvas"></canvas>
   <p id="message" style="display:none;"></p>
-  <p id="question"></p>
-  <button id="buttonRandomQuestion">Random Question</button>
+  <section id="questionsPanel">
+    <p id="question"></p>
+    <button id="buttonRandomQuestion">Random Question</button>
+  </section>
   <div style="margin-bottom:10px;margin-top:10px">
     <button id="buttonNext">Next</button>
     <button id="buttonStartOver">Start Over</button>
@@ -56,6 +58,7 @@
     const canvas = document.getElementById("canvas");
     const message = document.getElementById("message");
     const question = document.getElementById("question");
+    const questionsPanel = document.getElementById("questionsPanel");
     const buttonNext = document.getElementById("buttonNext");
     const buttonStartOver = document.getElementById("buttonStartOver");
     const buttonRandomQuestion = document.getElementById("buttonRandomQuestion");
