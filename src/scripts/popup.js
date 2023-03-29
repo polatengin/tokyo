@@ -1,7 +1,13 @@
 function loadData(_client, webContext){
     const projectId = webContext.project.id;
     const teamId = webContext.team.id;
-
+    const availableMembersKey="availableMembers";
+    let first=false;
+    let availableMembers = localStorage.getItem(availableMembersKey);
+    if(!availableMembers){
+        first=true;
+    }
+    availableMembers = availableMembers ? JSON.parse(availableMembers) : [];
     let counter = 0;
 
     _client.getTeamMembersWithExtendedProperties(projectId, teamId, 100, 0).then((members) => {
@@ -124,12 +130,16 @@ function loadData(_client, webContext){
       }
 
       members.forEach((member) => {
-        team.appendChild(createRowForTeamMember(member));
+        const memberId=member.identity.id.toString();
+        if(first || availableMembers.indexOf(memberId) > -1){
+          team.appendChild(createRowForTeamMember(member));
+        }
       });
 
       completedTeamMembers.forEach((member) => {
         const row = document.getElementById(`member-${member}`);
-        row.classList.add("completed");
+        if(row)
+          row.classList.add("completed");
       });
 
       const startRandomizer = () => {
@@ -143,19 +153,21 @@ function loadData(_client, webContext){
           });
 
           const memberElement = document.getElementById(`member-${randomMember.identity.id}`);
-          memberElement.classList.add("bold");
+          if(memberElement){
+            memberElement.classList.add("bold");
 
-          if (randomizer++ > 20) {
-            clearInterval(timer);
+            if (randomizer++ > 20) {
+              clearInterval(timer);
 
-            memberElement.style.color = "green";
+              memberElement.style.color = "green";
 
-            completedTeamMembers.push(randomMember.identity.id);
-            notCompletedTeamMembers.splice(randomIndex, 1);
+              completedTeamMembers.push(randomMember.identity.id);
+              notCompletedTeamMembers.splice(randomIndex, 1);
 
-            localStorage.setItem(key, JSON.stringify({question: questionOfTheDay, members: completedTeamMembers}));
+              localStorage.setItem(key, JSON.stringify({question: questionOfTheDay, members: completedTeamMembers}));
 
-            buttonNext.disabled = false;
+              buttonNext.disabled = false;
+            }
           }
         }
 
@@ -175,7 +187,7 @@ function loadData(_client, webContext){
 
             completedTeamMembers.push(randomMember.identity.id);
 
-            localStorage.setItem(key, JSON.stringify({question: questionOfTheDay, members: completedTeamMembers}));
+            storeToday( JSON.stringify({question: questionOfTheDay, members: completedTeamMembers}));
           } else {
             timer = setInterval(randomNumber, 200);
           }
@@ -183,8 +195,8 @@ function loadData(_client, webContext){
       };
 
       buttonStartOver.addEventListener("click", () => {
-        const key = (new Intl.DateTimeFormat().format(new Date())).replace(/\//g, "");
-        localStorage.removeItem(key);
+        clearTodayStorage();
+        initStorage();
 
         completedTeamMembers = [];
         notCompletedTeamMembers = members.slice();
@@ -213,31 +225,16 @@ function loadData(_client, webContext){
       });
 
       buttonRandomQuestion.addEventListener("click", () => {
-        fetch("https://raw.githubusercontent.com/polatengin/tokyo/main/qotd.json").then(response => response.json()).then(questions => {
-            const finishedQuestions = [];
-            for (let iLoop = 0; iLoop < localStorage.length; iLoop++){
-              const current = localStorage.getItem(localStorage.key(iLoop)) || {};
-              if (current.question) {
-                finishedQuestions.push(current.question);
-              }
-            }
-            if (finishedQuestions.length === questions.length) {
-              finishedQuestions.clear();
-            }
-            const questionBucket = questions.filter(e => !finishedQuestions.includes(e));
-
-            const key = (new Intl.DateTimeFormat().format(new Date())).replace(/\//g, "");
-            const day = JSON.parse(localStorage.getItem(key));
-
-            const questionOfTheDay = questionBucket[Math.floor(Math.random() * questionBucket.length)];
-
-            localStorage.setItem(key, JSON.stringify({
-              question: questionOfTheDay,
-              members: day.members,
-            }));
-
-            question.innerText = questionOfTheDay.text;
-          });
+        getRandomQuestion((questionOfTheDay)=>{
+          const day = getDayStorage();
+          if (day) {
+              storeToday(JSON.stringify({
+                  question: questionOfTheDay,
+                  members: day.members,
+              }));
+              question.innerText = questionOfTheDay.text;
+          }
+        });
       });
 
       buttonNext.click();
