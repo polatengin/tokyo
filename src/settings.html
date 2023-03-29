@@ -68,7 +68,8 @@
       setupDevShim();
       IS_SETTINGS=true;
     }
-    VSS.init({ usePlatformScripts: true, usePlatformStyles: true });
+    
+    VSS.init({ applyTheme: true, usePlatformScripts: true, usePlatformStyles: true });
 
     const team = document.getElementById("team");
     const canvas = document.getElementById("canvas");

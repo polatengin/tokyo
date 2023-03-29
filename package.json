@@ -11,7 +11,7 @@
     "pack": "npx tfx-cli extension create --rev-version",
     "pack-debug": "npx tfx-cli extension create --rev-version --overrides-file dev.json",
     "web": "cd src && npx live-server --port=9393 --entry-file=main.html --host=localhost",
-    "debug": " npx live-server --port=33000 --entry-file=src/main.html --https=certs/https.js  --host=localhost"
+    "debug": "npx live-server --port=33000 --entry-file=src/main.html --https=certs/https.js  --host=localhost"
   },
   "dependencies": {
     "vss-web-extension-sdk": "5.141.0"
