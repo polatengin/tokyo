@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Team Member Randomizer</title>
+  <script src="scripts/shim.js"></script>
+  <script src="scripts/utils.js"></script>
+  <script src="scripts/settings.js"></script>
+  <script src="../node_modules/vss-web-extension-sdk/lib/VSS.SDK.min.js"></script>
+  <style>
+    .bold {
+      font-weight: bold;
+    }
+
+    .completed {
+      text-decoration: line-through;
+      color: #999;
+    }
+
+    #canvas {
+      display: none;
+    }
+    #completePanel {
+      margin-bottom:10px;
+    }
+    #questionPanel{
+      margin-bottom:20px;
+    }
+
+    #controls {
+      margin-bottom:20px;
+    }
+
+    #content {
+      padding:10px;
+    }
+
+    section {
+      margin-top:20px;
+    }
+    #team{
+      margin-top:20px;
+    }
+
+  </style>
+</head>
+<body style="background-color:inherit">
+  <div id="content">
+    <a href="popupDialog.html"> <span>&#x2B05;</span> back</a>
+
+    <h1>Settings</h1>
+    <section>
+      Show Question of the day: <input type="checkbox" id="showQuestion" checked/>
+    </section>
+   <section>
+    Speed: <input type="range" id="speed" min="0" max="300" step="50" value="200">
+   </section>
+  
+    <section id="teamPanel">
+      Available Team Members:
+  
+      <table id="team"></table>
+    </section>
+
+</div>
+  <script type="text/javascript">
+    "use strict";
+    if(isDevEnvironment()){
+      setupDevShim();
+      IS_SETTINGS=true;
+    }
+    
+    VSS.init({ applyTheme: true, usePlatformScripts: true, usePlatformStyles: true });
+
+    const team = document.getElementById("team");
+    const canvas = document.getElementById("canvas");
+    const message = document.getElementById("message");
+    const question = document.getElementById("question");
+    const buttonNext = document.getElementById("buttonNext");
+    const buttonStartOver = document.getElementById("buttonStartOver");
+
+    VSS.require(["VSS/Service", "TFS/Core/RestClient"], (VSS_Service, TFS_RestClient) => {
+      const _client = VSS_Service.getCollectionClient(TFS_RestClient.CoreHttpClient4_1);
+      const webContext = VSS.getWebContext();
+      loadSettingsData(_client,webContext)
+      VSS.notifyLoadSucceeded();
+    });
+  </script>
+</body>
+</html>

@@ -1,2 +1,6 @@
 node_modules/
 *.vsix
+
+#local development certs
+certs/*.crt
+certs/*.key
