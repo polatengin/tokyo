@@ -1,5 +1,5 @@
 {
-    "baseUri": "https://localhost:33000",
-    "id": "team-member-randomizer-debug",
-    "publisher": "CSE-DevOps-Preview"
+  "baseUri": "https://localhost:33000",
+  "id": "team-member-randomizer-debug",
+  "publisher": "CSE-DevOps-Preview"
 }
