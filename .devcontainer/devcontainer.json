@@ -11,10 +11,14 @@
     "ghcr.io/devcontainers-contrib/features/jest:1": {},
     "ghcr.io/devcontainers-contrib/features/typescript:1": {}
   },
-  "extensions": [
-    "editorconfig.editorconfig",
-    "GitHub.copilot",
-    "ms-azuretools.vscode-docker"
-  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "editorconfig.editorconfig",
+        "GitHub.copilot",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  },
   "remoteUser": "vscode"
 }
