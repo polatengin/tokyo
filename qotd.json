@@ -418,5 +418,9 @@
   {
     "id": 107,
     "text": "Do you prefer a basic sandwich or one with all the toppings when it comes to sandwiches?"
+  },
+  {
+    "id": 108,
+    "text": "Time to take some notes. What do you grab? Pen? Pencil?"
   }
 ]
