@@ -438,5 +438,9 @@
   {
     "id": 112,
     "text": "What is your biggest FOMO (fear-of-missing-out)?"
+  },
+  {
+    "id": 113,
+    "text": "Would you prefer to live up in the mountains or down by the seashore?"
   }
 ]
