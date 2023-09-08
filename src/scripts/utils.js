@@ -70,6 +70,22 @@ function getRandomQuestion(callback) {
     callback(randomQuestion);
   });
 }
+
+function getRandomHotD(callback) {
+  fetch("https://raw.githubusercontent.com/polatengin/tokyo/main/hotd.json").then(response => response.json()).then(items => {
+    const formattedDate = (new Date()).toLocaleDateString('en-US', {
+      month: 'long',
+      day: 'numeric',
+    });
+    const holidays = [];
+    for (const entry of items) {
+      if (entry.date === formattedDate) {
+        holidays.push(entry.holidays);
+      }
+    }
+    callback( holidays[Math.floor(Math.random() * holidays.length)] );
+  });
+}
 function initStorage() {
   getRandomQuestion((question) => {
     getRandomHotD((hotd) => {
