@@ -1,19 +1,20 @@
-function loadData(_client, webContext){
-    const projectId = webContext.project.id;
-    const teamId = webContext.team.id;
-    const availableMembersKey="availableMembers";
-    const speed = getSpeed();
-    const showQuestion=getShowQuestionStatus();
-    if(!showQuestion){
-      questionsPanel.style.display = "none";
-    }
-    let first=false;
-    let availableMembers = localStorage.getItem(availableMembersKey);
-    if(!availableMembers){
-        first=true;
-    }
-    availableMembers = availableMembers ? JSON.parse(availableMembers) : [];
-    let counter = 0;
+function loadData(_client, _webContext) {
+  const team = document.getElementById("team");
+  const canvas = document.getElementById("canvas");
+  const message = document.getElementById("message");
+  const buttonNext = document.getElementById("buttonNext");
+  const buttonStartOver = document.getElementById("buttonStartOver");
+  const question = document.getElementById("question");
+  const questionsPanel = document.getElementById("questionsPanel");
+  const buttonRandomQuestion = document.getElementById("buttonRandomQuestion");
+  const hotd = document.getElementById("hotd");
+  const hotdPanel = document.getElementById("hotdPanel");
+  const buttonRandomHotD = document.getElementById("buttonRandomHotD");
+
+  const projectId = _webContext.project.id;
+  const teamId = _webContext.team.id;
+  const availableMembersKey = "availableMembers";
+  const speed = getSpeed();
 
     _client.getTeamMembersWithExtendedProperties(projectId, teamId, 100, 0).then((members) => {
       const createRowForTeamMember = (member) => {
