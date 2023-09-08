@@ -53,23 +53,15 @@
       Available Team Members:
       <table id="team"></table>
     </section>
-
-</div>
+  </div>
   <script type="text/javascript">
     "use strict";
-    if(isDevEnvironment()){
+    if (isDevEnvironment()) {
       setupDevShim();
-      IS_SETTINGS=true;
+      IS_SETTINGS = true;
     }
-    
-    VSS.init({ applyTheme: true, usePlatformScripts: true, usePlatformStyles: true });
 
-    const team = document.getElementById("team");
-    const canvas = document.getElementById("canvas");
-    const message = document.getElementById("message");
-    const question = document.getElementById("question");
-    const buttonNext = document.getElementById("buttonNext");
-    const buttonStartOver = document.getElementById("buttonStartOver");
+    VSS.init({ applyTheme: true, usePlatformScripts: true, usePlatformStyles: true });
 
     VSS.require(["VSS/Service", "TFS/Core/RestClient"], (VSS_Service, TFS_RestClient) => {
       const _client = VSS_Service.getCollectionClient(TFS_RestClient.CoreHttpClient4_1);
