@@ -93,6 +93,7 @@ function initStorage() {
       if (!day) {
         storeToday(JSON.stringify({
           question: question,
+          hotd: hotd,
           members: [],
         }));
       }
