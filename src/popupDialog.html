@@ -7,7 +7,7 @@
   <script src="scripts/popup.js"></script>
   <script src="../node_modules/vss-web-extension-sdk/lib/VSS.SDK.min.js"></script>
   <style>
-    html, body { margin:0; padding:0; overflow-x:hidden; overflow-y:scroll; }
+    html, body { margin:0; padding:0; overflow:hidden; }
 
     body::-webkit-scrollbar { width:12px; }
 
@@ -15,6 +15,12 @@
       cursor: pointer;
       text-align: right;
       display: block;
+    }
+
+    #team {
+      display: grid;
+      overflow-y: scroll;
+      height: calc(100vh - 200px);
     }
 
     .bold { font-weight:bold; }
