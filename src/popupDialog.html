@@ -59,16 +59,6 @@
     if(isDevEnvironment())
       setupDevShim();
 
-    const settings = document.getElementById("settings");
-    const team = document.getElementById("team");
-    const canvas = document.getElementById("canvas");
-    const message = document.getElementById("message");
-    const question = document.getElementById("question");
-    const questionsPanel = document.getElementById("questionsPanel");
-    const buttonNext = document.getElementById("buttonNext");
-    const buttonStartOver = document.getElementById("buttonStartOver");
-    const buttonRandomQuestion = document.getElementById("buttonRandomQuestion");
-
     VSS.init({ applyTheme: true, usePlatformScripts: true, usePlatformStyles: true });
 
     VSS.require(["VSS/Service", "TFS/Core/RestClient"], (VSS_Service, TFS_RestClient) => {
