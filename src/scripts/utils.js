@@ -27,6 +27,11 @@ function getShowQuestionStatus() {
   return localStorage.getItem("showQuestion") == "true";
 }
 
+function storeShowHotDStatus(status) {
+  localStorage.setItem("showHotD", status);
+}
+
+
 function storeSpeed(speed) {
   localStorage.setItem("speed", speed);
 }
