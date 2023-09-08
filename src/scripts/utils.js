@@ -31,6 +31,9 @@ function storeShowHotDStatus(status) {
   localStorage.setItem("showHotD", status);
 }
 
+function getShowHotDStatus() {
+  return localStorage.getItem("showHotD") == "true";
+}
 
 function storeSpeed(speed) {
   localStorage.setItem("speed", speed);
