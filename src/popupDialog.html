@@ -73,10 +73,10 @@
 
     VSS.require(["VSS/Service", "TFS/Core/RestClient"], (VSS_Service, TFS_RestClient) => {
       const _client = VSS_Service.getCollectionClient(TFS_RestClient.CoreHttpClient4_1);
+      const _webContext = VSS.getWebContext();
 
-      const webContext = VSS.getWebContext();
-      loadData(_client,webContext);
-     
+      loadData(_client, _webContext);
+
       VSS.notifyLoadSucceeded();
     });
   </script>
