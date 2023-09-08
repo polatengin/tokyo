@@ -7,40 +7,31 @@
   <script src="scripts/settings.js"></script>
   <script src="../node_modules/vss-web-extension-sdk/lib/VSS.SDK.min.js"></script>
   <style>
+    body {
+      height: calc(100vh - 10px);
+    }
+    h1 {
+      margin: 0;
+    }
     .bold {
       font-weight: bold;
     }
-
     .completed {
       text-decoration: line-through;
       color: #999;
     }
-
-    #canvas {
-      display: none;
-    }
-    #completePanel {
-      margin-bottom:10px;
-    }
-    #questionPanel{
-      margin-bottom:20px;
-    }
-
-    #controls {
-      margin-bottom:20px;
-    }
-
     #content {
-      padding:10px;
+      padding: 10px;
+      display: grid;
+      gap: 15px;
+      height: 100%;
     }
-
-    section {
-      margin-top:20px;
+    #teamPanel {
+      overflow-y: scroll;
     }
-    #team{
-      margin-top:20px;
+    #team {
+      margin-top: 15px;
     }
-
   </style>
 </head>
 <body style="background-color:inherit">
